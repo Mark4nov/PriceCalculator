@@ -1,0 +1,13 @@
+{
+  "name": "PriceCalculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "PriceCalculator.js",
+  "scripts": {
+    "start": "PriceCalculator.js"
+  },
+  "keywords": [],
+  "author": "Jesús Marcano <MPJEduardo@outlook.com>",
+  "license": "ISC",
+  "type": "module"
+}
