@@ -19,6 +19,7 @@ const Mani = new Ingredient("Mani", 1, 100);
 const Arequipe = new Ingredient("Arequipe", 5.56, 500);
 const Cocosete = new Ingredient("Cocosete", 3, 200);
 const Brownies = new Ingredient('Brownies', 10, 10);
+const BesitoDeChocolate = new Ingredient('BesitosDeChocolate', 5, 500);
 
 const LecheEnPolvoLiquida = new Recipe('Leche en polvo liquida', 1050);
 LecheEnPolvoLiquida.AddIngredient(LecheEnPolvo, 130);
@@ -28,12 +29,13 @@ Nata.AddIngredient(LecheEnPolvoLiquida, 350);
 Nata.AddIngredient(Mantequilla, 200);
 
 const LecheCondensadaCasera = new Recipe('Leche condensada casera', 400);
-LecheCondensadaCasera.AddIngredient(LecheEnPolvo, 130);
+LecheCondensadaCasera.AddIngredient(LecheLiquida, 1000);
 LecheCondensadaCasera.AddIngredient(Azucar, 200);
 
-const SiropeDeChocolate = new Recipe('Siropede de chocolate', 400)
+const SiropeDeChocolate = new Recipe('Siropede de chocolate', 800)
 SiropeDeChocolate.AddIngredient(Azucar, 300);
-SiropeDeChocolate.AddIngredient(Cacao, 50)
+SiropeDeChocolate.AddIngredient(LecheLiquida, 2000);
+SiropeDeChocolate.AddIngredient(BesitoDeChocolate, 200);
 
 const MezclaDeMantecado = new Recipe('Mantecado', 1080); 
 MezclaDeMantecado.AddIngredient(Nata, 480);
@@ -50,10 +52,11 @@ const MezclaChocolate = new Recipe('Mezcla de chocolate', 1400);
 //AÑADE LOS INGREDIENTES A LA RECETA
                         //Ingrediente,        Cantidad a usar
 MezclaTortaSuiza.AddIngredient(MezclaDeMantecado, 1080);
-MezclaTortaSuiza.AddIngredient(Oreos,              15);
+MezclaTortaSuiza.AddIngredient(Galletas,              12);
 
 MezclaChocolate.AddIngredient(MezclaDeMantecado, 1080);
 MezclaChocolate.AddIngredient(Cacao, 60);
+MezclaChocolate.AddIngredient(SiropeDeChocolate, 30);
 
 MezclaMani.AddIngredient(MezclaDeMantecado, 1080);
 MezclaMani.AddIngredient(Mani,  100);
