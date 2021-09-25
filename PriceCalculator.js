@@ -5,30 +5,30 @@ import Product from "./Products.js";
 
 //CREA LOS INGREDIENTES
                             //             Nombre,               Precio,    Contenido del empaque//
-const LecheEnPolvo =               new Ingredient('Leche',                  2.5,        400);
-const LecheLiquida =        new Ingredient('Lechede vaca',           1,        2000);
-const Mantequilla =         new Ingredient('Mantequilla',            5,          1000);
-const Azucar =              new Ingredient('Azucar',                 0.7,        1000);
-const LecheCondensada =     new Ingredient('Leche condensada',       1.5,        360);
-const EsenciaDeMantecado = new Ingredient('Esencia de mantecado',   0.5,          50);
-const Galletas = new Ingredient('Galletas', 0.84, 24);
-const Oreos = new Ingredient('Galletas OREOS', 0.7, 12);
-const Cacao = new Ingredient('Cacao', 1, 100);
-const Altunsa = new Ingredient('Altunsa', 1.67, 350);
-const Mani = new Ingredient("Mani", 1, 100);
-const Arequipe = new Ingredient("Arequipe", 5.56, 500);
-const Cocosete = new Ingredient("Cocosete", 3, 200);
-const Brownies = new Ingredient('Brownies', 10, 10);
+const LecheEnPolvo =               new Ingredient('Leche',                  2.5,        400); //gr
+const LecheDeVaca =        new Ingredient('Leche de vaca',           1,        2000); //ml
+const Mantequilla =         new Ingredient('Mantequilla',            5,          1000); //gr
+const Azucar =              new Ingredient('Azucar',                 0.7,        1000); //gr
+const LecheCondensada =     new Ingredient('Leche condensada',       1.5,        360); //gr
+const EsenciaDeMantecado = new Ingredient('Esencia de mantecado',   0.5,          50); //ml
+const Galletas = new Ingredient('Galletas', 0.84, 24); //unidades
+const Oreos = new Ingredient('Galletas OREOS', 0.7, 12); //unidades
+const Cacao = new Ingredient('Cacao', 1, 100); //gr
+const Altunsa = new Ingredient('Altunsa', 1.67, 350); //gr
+const Mani = new Ingredient("Mani", 1, 100); //gr
+const Arequipe = new Ingredient("Arequipe", 5.56, 500); //gr
+const Cocosete = new Ingredient("Cocosete", 3, 200); //gr
+const Brownies = new Ingredient('Brownies', 10, 10); //unidades
 
 const LecheEnPolvoLiquida = new Recipe('Leche en polvo liquida', 1050);
 LecheEnPolvoLiquida.AddIngredient(LecheEnPolvo, 130);
 
 const Nata = new Recipe('Nata', 480);
-Nata.AddIngredient(LecheEnPolvoLiquida, 350);
+Nata.AddIngredient(LecheDeVaca, 350);
 Nata.AddIngredient(Mantequilla, 200);
 
 const LecheCondensadaCasera = new Recipe('Leche condensada casera', 400);
-LecheCondensadaCasera.AddIngredient(LecheEnPolvo, 130);
+LecheCondensadaCasera.AddIngredient(LecheDeVaca, 130);
 LecheCondensadaCasera.AddIngredient(Azucar, 200);
 
 const SiropeDeChocolate = new Recipe('Siropede de chocolate', 400)
@@ -67,9 +67,9 @@ const EnvaseChikito = new Container('Envase 7oz', 180,      0.08,           0.0)
 
 //CREA LOS PRODUCTOS
                                 //Nombre,          Receta base,     Contenedor,     Precio final.
-const HeladoTortaSuiza = new Product('Helado tortasuiza',MezclaTortaSuiza,   EnvaseMedianom,      2.5);
-const HeladoMani = new Product('Helado mani',MezclaMani,   EnvaseMedianom,      2.5);
-const HeladoChocolate = new Product('Helado Chocolate',MezclaChocolate,   EnvaseMedianom,      2.5);
+const HeladoTortaSuiza = new Product('Helado tortasuiza',MezclaTortaSuiza,   EnvaseMedianom,      2);
+const HeladoMani = new Product('Helado mani',MezclaMani,   EnvaseMedianom,      2);
+const HeladoChocolate = new Product('Helado Chocolate',MezclaChocolate,   EnvaseMedianom,      2);
 
 
 HeladoTortaSuiza.PrintInfo();
