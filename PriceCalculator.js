@@ -20,31 +20,33 @@ const Arequipe = new Ingredient("Arequipe", 5.56, 500); //gr
 const Cocosete = new Ingredient("Cocosete", 3, 200); //gr
 const Brownies = new Ingredient('Brownies', 10, 10); //unidades
 
+// ESTAS SON RECETAS PARA USAR EN OTRAS RECETAS, IGNORALAS POR AHORA. ---------------------------------------------
 const LecheEnPolvoLiquida = new Recipe('Leche en polvo liquida', 1050);
 LecheEnPolvoLiquida.AddIngredient(LecheEnPolvo, 130);
 
-const Nata = new Recipe('Nata', 480);
+const Nata = new Recipe('Nata', 480); //gr
 Nata.AddIngredient(LecheDeVaca, 350);
 Nata.AddIngredient(Mantequilla, 200);
 
-const LecheCondensadaCasera = new Recipe('Leche condensada casera', 400);
+const LecheCondensadaCasera = new Recipe('Leche condensada casera', 400); //gr
 LecheCondensadaCasera.AddIngredient(LecheDeVaca, 130);
 LecheCondensadaCasera.AddIngredient(Azucar, 200);
 
-const SiropeDeChocolate = new Recipe('Siropede de chocolate', 400)
+const SiropeDeChocolate = new Recipe('Siropede de chocolate', 400) //gr
 SiropeDeChocolate.AddIngredient(Azucar, 300);
 SiropeDeChocolate.AddIngredient(Cacao, 50)
 
-const MezclaDeMantecado = new Recipe('Mantecado', 1080); 
+const MezclaDeMantecado = new Recipe('Mantecado', 1080); //ml
 MezclaDeMantecado.AddIngredient(Nata, 480);
 MezclaDeMantecado.AddIngredient(LecheCondensadaCasera, 400);
 MezclaDeMantecado.AddIngredient(EsenciaDeMantecado, 2.5);
+// FIN IGNORAR ---------------------------------------------------
 
 //CREA LA RECETA
-                                //Nombre,   Cantidad Resultante (unidad de medida debe coincidir con la capacidad del envase)
-const MezclaTortaSuiza = new Recipe('Mezcla torta suiza', 1400);
-const MezclaMani = new Recipe('Mezcla mantecado con mani', 1400);
-const MezclaChocolate = new Recipe('Mezcla de chocolate', 1400);
+                                //Nombre,   Cantidad Resultante
+const MezclaTortaSuiza = new Recipe('Mezcla torta suiza', 1400); //ml
+const MezclaMani = new Recipe('Mezcla mantecado con mani', 1400); //ml
+const MezclaChocolate = new Recipe('Mezcla de chocolate', 1400); //ml
 
 
 //AÑADE LOS INGREDIENTES A LA RECETA
