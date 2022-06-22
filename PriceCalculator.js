@@ -18,9 +18,11 @@ const Mani = new Ingredient("Mani", 1.5, 100); //gr
 const Huevos = new Ingredient('cartón de huevos', 5, 30) // unidades
 const Chocolate_oscuro = new Ingredient('Chocolate oscuro', 4, 200) // gramos
 
+// ESTAS SON RECETAS PARA USAR EN OTRAS RECETAS, IGNORALAS POR AHORA. ---------------------------------------------
 const LecheEnPolvoLiquida = new Recipe('Leche en polvo liquida', 1050);
 LecheEnPolvoLiquida.AddIngredient(LecheEnPolvo, 130);
 
+<<<<<<< HEAD
 const LecheCondensadaCasera = new Recipe('Leche condensada casera', 400);
 LecheCondensadaCasera.AddIngredient(LecheDeVaca, 130);
 LecheCondensadaCasera.AddIngredient(Azucar, 200);
@@ -28,6 +30,31 @@ LecheCondensadaCasera.AddIngredient(Azucar, 200);
 const Nata = new Recipe('Nata', 480);
 Nata.AddIngredient(LecheEnPolvoLiquida, 300);
 Nata.AddIngredient(Mantequilla, 200);
+=======
+const Nata = new Recipe('Nata', 480); //gr
+Nata.AddIngredient(LecheDeVaca, 350);
+Nata.AddIngredient(Mantequilla, 200);
+
+const LecheCondensadaCasera = new Recipe('Leche condensada casera', 400); //gr
+LecheCondensadaCasera.AddIngredient(LecheDeVaca, 130);
+LecheCondensadaCasera.AddIngredient(Azucar, 200);
+
+const SiropeDeChocolate = new Recipe('Siropede de chocolate', 400) //gr
+SiropeDeChocolate.AddIngredient(Azucar, 300);
+SiropeDeChocolate.AddIngredient(Cacao, 50)
+
+const MezclaDeMantecado = new Recipe('Mantecado', 1080); //ml
+MezclaDeMantecado.AddIngredient(Nata, 480);
+MezclaDeMantecado.AddIngredient(LecheCondensadaCasera, 400);
+MezclaDeMantecado.AddIngredient(EsenciaDeMantecado, 2.5);
+// FIN IGNORAR ---------------------------------------------------
+
+//CREA LA RECETA
+                                //Nombre,   Cantidad Resultante
+const MezclaTortaSuiza = new Recipe('Mezcla torta suiza', 1400); //ml
+const MezclaMani = new Recipe('Mezcla mantecado con mani', 1400); //ml
+const MezclaChocolate = new Recipe('Mezcla de chocolate', 1400); //ml
+>>>>>>> 88c99e265fc868b3d01fe8a55a1fe894d8ceceb0
 
 
                                 //Ingrediente,        Cantidad a usar
@@ -99,6 +126,13 @@ const Helado_S_TortaSuiza = new Product('Helado tortasuiza PEQUEÑO', Mezcla_Tor
 const Helado_S_chocogalleta = new Product('Helado choco-galleta PEQUEÑO',Mezcla_Chocogalleta,   EnvaseChikito,      0.85);
 const Helado_S_ChocolateOscuro = new Product('Helado de chocolate oscuro PEQUEÑO', Mezcla_ChocolateOscuro, EnvaseChikito, 1);
 
+<<<<<<< HEAD
 Helado_S_TortaSuiza.PrintInfo();
 Helado_S_chocogalleta.PrintInfo();
 Helado_S_ChocolateOscuro.PrintInfo();
+=======
+
+HeladoTortaSuiza.PrintInfo();
+HeladoChocolate.PrintInfo();
+HeladoMani.PrintInfo();
+>>>>>>> 88c99e265fc868b3d01fe8a55a1fe894d8ceceb0
