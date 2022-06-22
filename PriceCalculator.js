@@ -5,75 +5,100 @@ import Product from "./Products.js";
 
 //CREA LOS INGREDIENTES
                             //             Nombre,               Precio,    Contenido del empaque//
-const LecheEnPolvo =               new Ingredient('Leche',                  2.5,        400); //gr
+const LecheEnPolvo =               new Ingredient('Leche',                  3.5,        400); //gr
 const LecheDeVaca =        new Ingredient('Leche de vaca',           1,        2000); //ml
 const Mantequilla =         new Ingredient('Mantequilla',            5,          1000); //gr
-const Azucar =              new Ingredient('Azucar',                 0.7,        1000); //gr
+const Azucar =              new Ingredient('Azucar',                 1.2,        1000); //gr
 const LecheCondensada =     new Ingredient('Leche condensada',       1.5,        360); //gr
 const EsenciaDeMantecado = new Ingredient('Esencia de mantecado',   0.5,          50); //ml
-const Galletas = new Ingredient('Galletas', 0.84, 24); //unidades
-const Oreos = new Ingredient('Galletas OREOS', 0.7, 12); //unidades
-const Cacao = new Ingredient('Cacao', 1, 100); //gr
-const Altunsa = new Ingredient('Altunsa', 1.67, 350); //gr
-const Mani = new Ingredient("Mani", 1, 100); //gr
-const Arequipe = new Ingredient("Arequipe", 5.56, 500); //gr
-const Cocosete = new Ingredient("Cocosete", 3, 200); //gr
-const Brownies = new Ingredient('Brownies', 10, 10); //unidades
+const Galletas_TapaAmarilla = new Ingredient('Galletas', 0.8, 12); //unidades
+const Oreos = new Ingredient('Galletas OREOS', 1, 12); //unidades
+const Cacao = new Ingredient('Cacao', 3.5, 250); //gr
+const Mani = new Ingredient("Mani", 1.5, 100); //gr
+const Huevos = new Ingredient('cartón de huevos', 5, 30) // unidades
+const Chocolate_oscuro = new Ingredient('Chocolate oscuro', 4, 200) // gramos
 
 const LecheEnPolvoLiquida = new Recipe('Leche en polvo liquida', 1050);
 LecheEnPolvoLiquida.AddIngredient(LecheEnPolvo, 130);
-
-const Nata = new Recipe('Nata', 480);
-Nata.AddIngredient(LecheDeVaca, 350);
-Nata.AddIngredient(Mantequilla, 200);
 
 const LecheCondensadaCasera = new Recipe('Leche condensada casera', 400);
 LecheCondensadaCasera.AddIngredient(LecheDeVaca, 130);
 LecheCondensadaCasera.AddIngredient(Azucar, 200);
 
-const SiropeDeChocolate = new Recipe('Siropede de chocolate', 800)
-SiropeDeChocolate.AddIngredient(Azucar, 300);
-SiropeDeChocolate.AddIngredient(LecheLiquida, 2000);
-SiropeDeChocolate.AddIngredient(BesitoDeChocolate, 200);
-
-const MezclaDeMantecado = new Recipe('Mantecado', 1080); 
-MezclaDeMantecado.AddIngredient(Nata, 480);
-MezclaDeMantecado.AddIngredient(LecheCondensadaCasera, 400);
-MezclaDeMantecado.AddIngredient(EsenciaDeMantecado, 2.5);
-
-//CREA LA RECETA
-                                //Nombre,   Cantidad Resultante (unidad de medida debe coincidir con la capacidad del envase)
-const MezclaTortaSuiza = new Recipe('Mezcla torta suiza', 1400);
-const MezclaMani = new Recipe('Mezcla mantecado con mani', 1400);
-const MezclaChocolate = new Recipe('Mezcla de chocolate', 1400);
+const Nata = new Recipe('Nata', 480);
+Nata.AddIngredient(LecheEnPolvoLiquida, 300);
+Nata.AddIngredient(Mantequilla, 200);
 
 
-//AÑADE LOS INGREDIENTES A LA RECETA
-                        //Ingrediente,        Cantidad a usar
-MezclaTortaSuiza.AddIngredient(MezclaDeMantecado, 1080);
-MezclaTortaSuiza.AddIngredient(Galletas,              12);
+                                //Ingrediente,        Cantidad a usar
+const MantecadoSimple = new Recipe('Mantecado simple', 1080); 
+MantecadoSimple.AddIngredient(Nata, Nata.Volume);
+MantecadoSimple.AddIngredient(LecheCondensadaCasera, 400);
+MantecadoSimple.AddIngredient(EsenciaDeMantecado, 2.5);
 
-MezclaChocolate.AddIngredient(MezclaDeMantecado, 1080);
-MezclaChocolate.AddIngredient(Cacao, 60);
-MezclaChocolate.AddIngredient(SiropeDeChocolate, 30);
+const MantecadoFrances = new Recipe('Mantecado a la francesa (con huevo)', 1080);
+MantecadoFrances.AddIngredient(Nata, Nata.Volume);
+MantecadoFrances.AddIngredient(Azucar, 150);
+MantecadoFrances.AddIngredient(Huevos, 3);
+MantecadoFrances.AddIngredient(LecheEnPolvoLiquida, 240);
 
-MezclaMani.AddIngredient(MezclaDeMantecado, 1080);
-MezclaMani.AddIngredient(Mani,  100);
+const MantecadoEXTRATHICK = new Recipe('Mantecado a la francesa (con huevo) EXTRA', 1000);
+MantecadoEXTRATHICK.AddIngredient(Nata, Nata.Volume);
+MantecadoEXTRATHICK.AddIngredient(Azucar, 150);
+MantecadoEXTRATHICK.AddIngredient(Huevos, 5);
 
+const BaseDeChocolate = new Recipe('Base de chocolate', 1080);
+BaseDeChocolate.AddIngredient(MantecadoFrances, MantecadoFrances.Volume);
+BaseDeChocolate.AddIngredient(Cacao, 30);
+
+const Caramelo = new Recipe('Carmelo', 450)
+Caramelo.AddIngredient(Nata, 240);
+Caramelo.AddIngredient(Azucar, 300);
+Caramelo.AddIngredient(Mantequilla, 70)
+
+console.log('-------------Costo de la base del mantecado-------------')
+console.log(`Frances: ${MantecadoFrances.GetTotalCost()}`)
+console.log(`Simple: ${MantecadoSimple.GetTotalCost()}`)
+console.log(`THICK: ${MantecadoEXTRATHICK.GetTotalCost()}`)
+console.log(`Carmelo: ${Caramelo.GetTotalCost()}`)
+console.log('--------------------------------------------------------')
+
+
+// BASE MANTECADO:
+const Mezcla_TortaSuiza = new Recipe('Mezcla torta suiza', 1620); //Con aire: 2160, sin aire: 1620
+Mezcla_TortaSuiza.AddIngredient(MantecadoFrances, MantecadoFrances.Volume)
+Mezcla_TortaSuiza.AddIngredient(Galletas_TapaAmarilla, 12)
+Mezcla_TortaSuiza.AddIngredient(Galletas_TapaAmarilla, 12)
+
+const Mezcla_Oreo = new Recipe('Mezcla oreo', 1620);
+Mezcla_Oreo.AddIngredient(MantecadoFrances, 1620)
+Mezcla_Oreo.AddIngredient(Oreos, 12)
+Mezcla_Oreo.AddIngredient(Oreos, 12)
+
+
+// BASE CHOCOLATE:
+const Mezcla_Chocogalleta = new Recipe('Mezcla de chocogalleta', 1620);
+Mezcla_Chocogalleta.AddIngredient(BaseDeChocolate, BaseDeChocolate.Volume);
+Mezcla_Chocogalleta.AddIngredient(Galletas_TapaAmarilla, 12)
+Mezcla_Chocogalleta.AddIngredient(Galletas_TapaAmarilla, 12)
+
+const Mezcla_ChocolateOscuro = new Recipe('Mezcla de chocolate oscuro', 1620);
+Mezcla_ChocolateOscuro.AddIngredient(BaseDeChocolate, 1260);
+Mezcla_ChocolateOscuro.AddIngredient(Chocolate_oscuro, 150);
 
 
 //CREA LOS ENVASES
                                     //Nombre,   Capacidad, Costo, Costo de la etiqueta
 const EnvaseMedianom = new Container('Envase 16oz', 460,      0.17,           0.0);//en este caso la unidad de meddia son ml.
-const EnvaseChikito = new Container('Envase 7oz', 180,      0.08,           0.0); 
+const EnvaseChikito = new Container('Envase 7oz', 180,      0.08,           0.05); 
+const EnvaseGrande = new Container('Envase 32oz', 920,      0.32,           0.0); 
 
 //CREA LOS PRODUCTOS
                                 //Nombre,          Receta base,     Contenedor,     Precio final.
-const HeladoTortaSuiza = new Product('Helado tortasuiza',MezclaTortaSuiza,   EnvaseMedianom,      2);
-const HeladoMani = new Product('Helado mani',MezclaMani,   EnvaseMedianom,      2);
-const HeladoChocolate = new Product('Helado Chocolate',MezclaChocolate,   EnvaseMedianom,      2);
+const Helado_S_TortaSuiza = new Product('Helado tortasuiza PEQUEÑO', Mezcla_TortaSuiza,   EnvaseChikito,      0.85);
+const Helado_S_chocogalleta = new Product('Helado choco-galleta PEQUEÑO',Mezcla_Chocogalleta,   EnvaseChikito,      0.85);
+const Helado_S_ChocolateOscuro = new Product('Helado de chocolate oscuro PEQUEÑO', Mezcla_ChocolateOscuro, EnvaseChikito, 1);
 
-
-HeladoTortaSuiza.PrintInfo();
-HeladoChocolate.PrintInfo();
-HeladoMani.PrintInfo();
+Helado_S_TortaSuiza.PrintInfo();
+Helado_S_chocogalleta.PrintInfo();
+Helado_S_ChocolateOscuro.PrintInfo();

@@ -20,7 +20,7 @@ class Product{
     }
     
     GetProfitPercentage(){
-        return `${ ((( this.Price * 100) / this.GetCostPerUnit()) - 100).toFixed(2) }%`;
+        return `${ ((this.GetProfitValue() / this.Price) * 100).toFixed(2) }%`;
     }
 
     PrintInfo(){
@@ -30,7 +30,7 @@ class Product{
             - Costo por producto: ${ this.GetCostPerUnit() }$
             - Costo total: ${this.GetCostPerUnit() * this.GetMaxUnitsPerRecipe()}
             - Precio ${ this.Price }$
-            - Ganancia bruta por producto: ${ this.GetProfitValue() }$ (${ this.GetProfitPercentage() } del costo)
+            - Ganancia por producto: ${ this.GetProfitValue() }$ (${ this.GetProfitPercentage() })
             - Ganancia TOTAL: ${ this.GetProfitValue() * this.GetMaxUnitsPerRecipe() }`);
     }
 }
